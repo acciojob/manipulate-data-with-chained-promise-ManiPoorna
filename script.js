@@ -1,5 +1,4 @@
 const output = document.getElementById("output");
-
 function getArray(arr) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -20,7 +19,11 @@ function getOddArray(arr) {
 function getEvenArray() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let evenArr = arr.map((value) => value * 2);
+            let evenArr = arr.map((value) => {
+				if (value % 2===0) {
+					return value*2
+				}
+			});
             resolve(evenArr)
         }, 2000)
     })
